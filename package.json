@@ -1,0 +1,28 @@
+{
+  "name": "@avensio/promise-pool",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/pool.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm dlx vite build",
+    "test": "pnpm dlx vitest run"
+  },
+  "keywords": [
+    "promise",
+    "pool",
+    "async",
+    "concurrency",
+    "avensio"
+  ],
+  "author": "Armin Kunkel",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/pool.es.d.ts",
+      "import": "./dist/pool.es.js",
+      "require": "./dist/pool.cjs.js",
+      "default": "./dist/pool.iife.js"
+    }
+  }
+}
