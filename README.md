@@ -1,11 +1,11 @@
-# @avensio/promise-pool
+# @avensio/async-pool
 
 Lightweight TypeScript promise pool that caps concurrency without introducing extra workers or dependencies.
 
 ## Usage
 
 ```ts
-import { createPool } from '@avensio/promise-pool';
+import { createPool } from '@avensio/async-pool';
 
 const pool = createPool(4);
 

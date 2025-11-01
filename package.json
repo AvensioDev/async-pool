@@ -1,13 +1,15 @@
 {
-  "name": "@avensio/promise-pool",
+  "name": "@avensio/async-pool",
   "version": "1.0.0",
+  "description": "Run functions in an non-blocking manner, without blocking the Event-Loop",
   "type": "module",
-  "main": "dist/pool.es.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "pnpm dlx vite build",
-    "test": "pnpm dlx vitest run"
-  },
+  "main": "./dist/pool.es.js",
+  "module": "./dist/pool.es.js",
+  "browser": "./dist/pool.iife.js",
+  "types": "./dist/pool.es.d.ts",
+  "author": "Armin Kunkel",
+  "license": "MIT",
+  "packageManager": "pnpm@10.20.0",
   "keywords": [
     "promise",
     "pool",
@@ -15,14 +17,52 @@
     "concurrency",
     "avensio"
   ],
-  "author": "Armin Kunkel",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./dist/pool.es.d.ts",
-      "import": "./dist/pool.es.js",
-      "require": "./dist/pool.cjs.js",
-      "default": "./dist/pool.iife.js"
-    }
+  "scripts": {
+    "postinstall": "node ../../scripts/hooks/commit-msg.mjs",
+    "prepack": "pnpm run release",
+    "release": "pnpm run test && pnpm run build && pnpm run changelog",
+    "build": "vite build",
+    "postbuild": "node ../../scripts/update.ts pool",
+    "lint": "eslint --fix",
+    "test": "vitest run --coverage test/",
+    "docs": "vitepress",
+    "clean": "rm -rf node_modules/ && rm -rf dist/"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avensio/async-pool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Avensio/async-pool/issues"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@avensio/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "changelogen": "^0.6.2",
+    "vitepress": "^1.6.4",
+    "@types/node": "^24.9.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "@vitest/browser": "^4.0.6",
+    "@vitest/coverage-v8": "^4.0.6",
+    "@vitest/ui": "^4.0.6",
+    "eslint": "^9.39.0",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.6",
+    "typescript": "^5.9.3"
   }
 }
