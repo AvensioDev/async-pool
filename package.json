@@ -18,7 +18,7 @@
     "avensio"
   ],
   "scripts": {
-    "postinstall": "node ../../scripts/hooks/commit-msg.mjs",
+    "postinstall": "node ./scripts/hooks/commit-msg.mjs",
     "prepack": "pnpm run release",
     "release": "pnpm run test && pnpm run build && pnpm run changelog",
     "build": "vite build",
@@ -47,7 +47,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@avensio/shared": "workspace:*"
+    "@avensio/shared": "workspace:* || ^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
