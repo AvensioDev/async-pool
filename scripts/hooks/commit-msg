@@ -1,0 +1,13 @@
+#!/bin/sh
+# commitlint hook
+
+if command -v pnpm >/dev/null 2>&1; then
+  pnpm exec commitlint --edit "$1"
+elif command -v npm >/dev/null 2>&1; then
+  npx --no -- commitlint --edit "$1"
+elif command -v yarn >/dev/null 2>&1; then
+  yarn commitlint --edit "$1"
+else
+  echo "⚠️ No supported package manager found (pnpm, npm or yarn)."
+  exit 1
+fi

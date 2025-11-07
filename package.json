@@ -21,12 +21,14 @@
     "postinstall": "node ./scripts/hooks/commit-msg.mjs",
     "prepack": "pnpm run release",
     "release": "pnpm run test && pnpm run build && pnpm run changelog",
+    "changelog": "changelogen --release --push --yes",
     "build": "vite build",
-    "postbuild": "node ../../scripts/update.ts pool",
+    "postbuild": "node ./scripts/update.ts",
     "lint": "eslint --fix",
     "test": "vitest run --coverage test/",
-    "docs": "vitepress",
-    "changelog": "changelogen --release",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "clean": "rm -rf node_modules/ && rm -rf dist/"
   },
   "publishConfig": {
