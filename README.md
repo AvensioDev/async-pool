@@ -1,23 +1,22 @@
 # @avensio/async-pool
 
-Lightweight TypeScript promise pool that caps concurrency without introducing extra workers or dependencies.
+Lightweight concurrency control for async tasks in Node.js — manage how many promises run at once.
 
-## Usage
+## Installation
 
-```ts
-import { createPool } from '@avensio/async-pool';
-
-const pool = createPool(4);
-
-await Promise.all([
-  pool(() => writeFile('a.ts', '...')),
-  pool(() => writeFile('b.ts', '...')),
-]);
+```bash
+pnpm add @avensio/async-pool
 ```
 
-## Development
+## Quick Example
 
-- `npm run build` – emit ESM output and type declarations to `dist/`.
-- `npm run test` – run the Vitest suite.
+```ts
+import { createPool as createAsyncPool } from '@avensio/async-pool'
 
-Contributions should keep the implementation dependency-free and fast.
+const pool = createAsyncPool(8)
+await Promise.all(items.map((item) => pool(() => fetchData(item))))
+```
+
+> This library controls concurrency, not parallelism. It uses Node.js’ event loop and does not spawn worker threads.
+
+→ See [Full Documentation](./docs/index.md)
