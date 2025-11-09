@@ -11,14 +11,29 @@ export default defineConfig({
   description: docs.description,
   lastUpdated: true,
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     sidebar: [
       {
-        text: 'Guide',
+        text: 'Getting Started',
         items: [
           { text: 'Overview', link: '/' },
-          { text: 'Usage', link: '/#usage' },
-          { text: 'Performance', link: '/#performance-insights' },
-          { text: 'Limitations', link: '/#limitations' },
+          { text: 'API Reference', link: '/api' },
+        ],
+      },
+      {
+        text: 'Guides',
+        items: [
+          { text: 'Usage Patterns', link: '/usage' },
+          { text: 'Performance & Tuning', link: '/performance' },
+          { text: 'Limitations', link: '/limitations' },
+        ],
+      },
+      {
+        text: 'Project',
+        items: [
+          { text: 'Development Workflow', link: '/development' },
         ],
       },
     ],
