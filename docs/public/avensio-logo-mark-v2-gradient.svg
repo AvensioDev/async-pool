@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>Avensio Logo</title>
+  <desc>Gerundetes A-Monogramm und Wortmarke Avensio</desc>
+  
+<defs>
+  <radialGradient id="rg" cx="35%" cy="30%" r="80%">
+    <stop offset="0%" stop-color="#3B82F6" />
+    <stop offset="100%" stop-color="#1E40FF" />
+  </radialGradient>
+</defs>
+
+<circle cx="128" cy="128" r="92" fill="url(#rg)" />
+<path d="M 93.04,169.40 L 128.00,72.80" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M 162.96,169.40 L 128.00,72.80" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M 107.76,132.60 L 148.24,132.60" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" fill="none" />
+</svg>
