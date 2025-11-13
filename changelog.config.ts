@@ -7,13 +7,13 @@ const config: Partial<ChangelogConfig> = {
     refactor: { title: '🧹 Refactors' },
     docs: { title: '📝 Docs' },
     test: { title: '🧪 Tests' },
-    chore: false,
+    chore: { title: 'Chores', semver: 'patch' },
   },
   publish: {
     private: false,
   },
   signTags: true,
-  output: 'CHANGELOG.md',
+  output: 'docs/CHANGELOG.md',
   noAuthors: false,
   hideAuthorEmail: true,
 }

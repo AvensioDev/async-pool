@@ -13,7 +13,9 @@ export default defineConfig(
     'dist/**',
     'coverage/**',
     'vite.config.ts',
-    'eslint.config.mjs'
+    'eslint.config.mjs',
+    'docs/.vitepress/cache/**',
+    'scripts/hooks/**',
   ]),
   {
     files: [
@@ -30,6 +32,8 @@ export default defineConfig(
       'prefer-const': 'error',
       'import/newline-after-import': ['error', { count: 1 }],
       'no-extra-semi': 'error',
+      'object-curly-spacing': ['error', 'always'],
+      'quotes': ['error', 'single'],
       '@typescript-eslint/no-explicit-any': 'off',
       'import/no-unresolved': 'off'
     },

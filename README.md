@@ -85,5 +85,5 @@ Clone the repo, `pnpm install`, and keep docs/tests in sync with code changes. S
 
 ## Links
 - [Documentation](./docs/index.md)
-- [Changelog](./CHANGELOG.md)
+- [Changelog](docs/CHANGELOG.md)
 - [License](./LICENSE)
