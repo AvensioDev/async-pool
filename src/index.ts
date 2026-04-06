@@ -1,13 +1,15 @@
 import { LinkedQueue } from '@avensio/shared'
 
-export type PoolRunner = <T>(task: () => Promise<T>) => Promise<T>
+export type Task<T> = () => T | PromiseLike<T>
+
+export type PoolRunner = <T>(task: Task<T>) => Promise<T>
 
 /**
  * Creates a concurrency-limited promise runner.
  * @param limit Maximum number of concurrent tasks. Must be a positive integer.
  */
 export function createPool(limit: number): PoolRunner {
-  if (!Number.isInteger(limit) || limit <= 0) {
+  if (!Number.isSafeInteger(limit) || limit <= 0) {
     throw new RangeError('Pool limit must be a positive integer')
   }
 
@@ -15,19 +17,17 @@ export function createPool(limit: number): PoolRunner {
   const queue: LinkedQueue<() => void> = new LinkedQueue()
 
   const startNext = () => {
-    if (active >= limit) {
+    if (active >= limit || queue.isEmpty()) {
       return
     }
-    if (!queue.isEmpty()) {
-      const next = queue.dequeue()
-      next()
-    }
+    const next = queue.dequeue()
+    next?.()
   }
 
-  return <T>(task: () => Promise<T>) =>
+  return <T>(task: Task<T>) =>
     new Promise<T>((resolve, reject) => {
       if (typeof task !== 'function') {
-        reject(new TypeError('Task must be a function that returns a promise'))
+        reject(new TypeError('Task must be a function'))
         return
       }
 
@@ -37,17 +37,13 @@ export function createPool(limit: number): PoolRunner {
       }
 
       const execute = () => {
-        let result: Promise<T>
-
         try {
-          result = Promise.resolve(task())
+          const result = task()
+          Promise.resolve(result).then(resolve, reject).finally(finalize)
         } catch (error) {
           reject(error)
           finalize()
-          return
         }
-
-        result.then(resolve, reject).finally(finalize)
       }
 
       const start = () => {
