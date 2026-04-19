@@ -1,6 +1,6 @@
 {
   "name": "@avensio/async-pool",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Run functions in an non-blocking manner, without blocking the Event-Loop",
   "type": "module",
   "main": "./dist/pool.es.js",

@@ -8,6 +8,12 @@ next:
 
 `@avensio/async-pool` schedules asynchronous tasks so that only a fixed number run at once. Use it when you need to overlap I/O-bound work—file writes, HTTP calls, database queries—without overwhelming the event loop with hundreds of pending promises. Concurrency here means multiple asynchronous operations share the same thread; the library does **not** add threads or worker processes and therefore does not provide parallel execution on additional CPU cores.
 
+## Install
+```bash
+pnpm add @avensio/async-pool
+# npm install @avensio/async-pool
+```
+
 ## Overview
 - **API surface**: a single exported factory, [`createPool`](./api.md), which validates the concurrency limit and returns a FIFO scheduler.
 - **Use cases**: throttling HTTP requests, batching filesystem writes, providing per-resource caps for heterogeneous workloads, and coordinating background tasks (see [Usage patterns](./usage.md)).
