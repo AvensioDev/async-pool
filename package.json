@@ -41,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Avensio/async-pool.git"
+    "url": "git+https://github.com/AvensioDev/async-pool.git"
   },
   "bugs": {
-    "url": "https://github.com/Avensio/async-pool/issues"
+    "url": "https://github.com/AvensioDev/async-pool/issues"
   },
   "files": [
     "dist",
