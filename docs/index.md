@@ -1,3 +1,9 @@
+---
+next:
+  text: API Reference
+  link: /packages/async-pool/docs/api
+---
+
 # Async-Pool
 
 `@avensio/async-pool` schedules asynchronous tasks so that only a fixed number run at once. Use it when you need to overlap I/O-bound work—file writes, HTTP calls, database queries—without overwhelming the event loop with hundreds of pending promises. Concurrency here means multiple asynchronous operations share the same thread; the library does **not** add threads or worker processes and therefore does not provide parallel execution on additional CPU cores.
