@@ -46,6 +46,7 @@
   "bugs": {
     "url": "https://github.com/AvensioDev/async-pool/issues"
   },
+  "homepage": "https://docs.avensio.de/packages/async-pool/docs/",
   "files": [
     "dist",
     "package.json",

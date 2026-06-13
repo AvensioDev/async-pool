@@ -42,7 +42,7 @@ pnpm test
 
 ## Release process
 
-Releases are handled via the `pnpm release` script, which runs tests, builds, generates docs, and updates the changelog. The [mono-repo](https://github.com/Avensio/avensio) contains CI workflows that publish documentation and packages once changes land on `main`.
+Releases are handled via the `pnpm release` script, which runs tests, builds, generates docs, and updates the changelog. The [mono-repo](https://github.com/AvensioDev/avensio) contains CI workflows that publish documentation and packages once changes land on `main`.
 
 If you need to cut a release manually:
 

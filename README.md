@@ -1,5 +1,13 @@
 # @avensio/async-pool
 
+[![npm version](https://img.shields.io/npm/v/%40avensio%2Fasync-pool)](https://www.npmjs.com/package/@avensio/async-pool)
+[![npm downloads](https://img.shields.io/npm/dm/%40avensio%2Fasync-pool)](https://www.npmjs.com/package/@avensio/async-pool)
+[![Documentation](https://img.shields.io/badge/docs-docs.avensio.de-0969da)](https://docs.avensio.de/packages/async-pool/docs/)
+[![GitHub](https://img.shields.io/badge/GitHub-AvensioDev%2Fasync--pool-181717?logo=github)](https://github.com/AvensioDev/async-pool)
+[![License](https://img.shields.io/npm/l/%40avensio%2Fasync-pool)](./LICENSE)
+
+[Documentation](https://docs.avensio.de/packages/async-pool/docs/) · [GitHub](https://github.com/AvensioDev/async-pool)
+
 Lightweight concurrency control for async work in Node.js and browsers. `createPool(limit)` lets you cap how many promises run at once, so you can overlap I/O-bound tasks without flooding the event loop.
 
 ## Features
@@ -84,6 +92,6 @@ More recipes (timeouts, cancellation, queue draining) live in the [usage guide](
 Clone the repo, `pnpm install`, and keep docs/tests in sync with code changes. See [`docs/development.md`](docs/development.md) for the full workflow.
 
 ## Links
-- [Documentation](./docs/index.md)
+- [Documentation](https://docs.avensio.de/packages/async-pool/docs/)
 - [Changelog](docs/CHANGELOG.md)
 - [License](./LICENSE)
