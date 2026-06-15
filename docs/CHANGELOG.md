@@ -1,3 +1,8 @@
+---
+title: Changelog @avensio/async-pool
+description: Chronological record of notable changes, improvements, fixes, and releases.
+---
+
 # Changelog
 
 ## v1.0.2
