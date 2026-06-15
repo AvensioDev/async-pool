@@ -1,3 +1,7 @@
+---
+description: Set up the async-pool repository, run checks and benchmarks, and build its documentation.
+---
+
 # Development Workflow
 
 Follow these steps to work on `@avensio/async-pool`, run tests, and update documentation.

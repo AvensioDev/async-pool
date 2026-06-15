@@ -1,3 +1,7 @@
+---
+description: Practical patterns for throttling HTTP requests, filesystem work, batches, and other asynchronous tasks.
+---
+
 # Usage Patterns
 
 This guide collects practical recipes for combining `createPool` with common async workflows.

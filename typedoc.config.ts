@@ -26,7 +26,9 @@ const config: Partial<TypeDocOptions> = {
     "@throws"
   ],
   frontmatterCommentTags: ["author", "description"],
-  frontmatterGlobals: {},
+  frontmatterGlobals: {
+    description: 'Typed API reference for creating and using concurrency-limited asynchronous task pools.',
+  },
   theme: 'markdown',
   hideGenerator: true,
   readme: 'none',

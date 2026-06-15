@@ -1,3 +1,7 @@
+---
+description: Reference for createPool, concurrency limits, task scheduling, return values, and error propagation.
+---
+
 # API Reference
 
 `@avensio/async-pool` exports a single factory: `createPool(limit)`. This page covers its signature, runtime guarantees, and error propagation.

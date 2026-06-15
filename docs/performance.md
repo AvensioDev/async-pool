@@ -1,3 +1,7 @@
+---
+description: Choose and benchmark concurrency limits that improve throughput without overwhelming downstream services.
+---
+
 # Performance & Tuning
 
 Correct pool sizing depends on task duration, upstream quotas, and host capacity. Use this guide to benchmark and tune concurrency limits.

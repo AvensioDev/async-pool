@@ -1,3 +1,7 @@
+---
+description: Understand when the async pool is insufficient and choose alternatives for cancellation, priorities, or CPU parallelism.
+---
+
 # Limitations & Alternatives
 
 The async pool intentionally keeps its feature set small. Before adopting it, review these constraints and potential workarounds.

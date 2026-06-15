@@ -1,4 +1,5 @@
 ---
+description: Limit concurrent asynchronous work with a small FIFO promise pool for Node.js and browsers.
 next:
   text: API Reference
   link: /packages/async-pool/docs/api
