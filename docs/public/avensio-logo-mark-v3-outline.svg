@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-  <title>Avensio Logo</title>
-  <desc>Gerundetes A-Monogramm und Wortmarke Avensio</desc>
-  
-<rect x="16" y="16" width="224" height="224" rx="40" ry="40" fill="none" stroke="#1E40FF" stroke-width="6" />
-<path d="M 95.84,166.09 L 128.00,77.22" stroke="#1E40FF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M 160.16,166.09 L 128.00,77.22" stroke="#1E40FF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M 109.38,132.23 L 146.62,132.23" stroke="#1E40FF" stroke-width="16" stroke-linecap="round" fill="none" />
-</svg>

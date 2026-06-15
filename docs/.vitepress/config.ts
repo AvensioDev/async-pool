@@ -71,7 +71,7 @@ const buildPageUrl = (relativePath?: string) => {
 }
 
 export default withPwa(defineConfig({
-  title: 'Avensio Async-Pool',
+  title: 'Async-Pool',
   description: 'Documentation for the Avensio async concurrency utility.',
   lang: 'en-US',
   lastUpdated: true,
@@ -80,7 +80,7 @@ export default withPwa(defineConfig({
     hostname: siteUrl,
   },
   vite: {
-    publicDir: path.resolve(__dirname, '../public'),
+    publicDir: path.resolve(__dirname, 'public'),
   },
   markdown: {
     lineNumbers: true,
@@ -119,11 +119,7 @@ export default withPwa(defineConfig({
     return headEntries
   },
   themeConfig: {
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2025 Avensio',
-    },
-    logo: '/favicon.ico',
+    logo: '/avensio-logo.svg',
     search: {
       provider: 'local',
       options: {
@@ -150,12 +146,12 @@ export default withPwa(defineConfig({
       {
         text: 'Ecosystem',
         items: [
-          { text: '@avensio/nuxt-jsonld', link: 'https://github.com/AvensioDev/nuxt-jsonld' },
-          { text: '@avensio/jsonld-schema', link: 'https://github.com/AvensioDev/jsonld-schema' },
-          { text: '@avensio/graph', link: 'https://github.com/AvensioDev/graph' },
-          { text: '@avensio/event-emitter', link: 'https://github.com/AvensioDev/event-emitter' },
-          { text: '@avensio/async-pool', link: 'https://github.com/AvensioDev/async-pool' },
-          { text: '@avensio/shared', link: 'https://github.com/AvensioDev/shared' },
+          { text: '@avensio/nuxt-jsonld', link: 'https://docs.avensio.de/packages/nuxt-jsonld/docs/' },
+          { text: '@avensio/jsonld-schema', link: 'https://docs.avensio.de/packages/jsonld-schema/docs/' },
+          { text: '@avensio/graph', link: 'https://docs.avensio.de/packages/graph/docs/' },
+          { text: '@avensio/event-emitter', link: 'https://docs.avensio.de/packages/event-emitter/docs/' },
+          { text: '@avensio/async-pool', link: 'https://docs.avensio.de/packages/async-pool/docs/' },
+          { text: '@avensio/shared', link: 'https://docs.avensio.de/packages/shared/docs/' },
         ],
       },
     ],
