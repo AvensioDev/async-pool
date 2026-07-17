@@ -4,15 +4,15 @@ Thanks for helping improve `async-pool`! This document explains how to get start
 
 ## Project layout
 
-- **Source** lives under `src/` (lists, queues, heaps, etc.)
-- **Tests** live under `test/` (Vitest) with micro-benchmarks under `test/benchmarks/`
+- **Source** lives in `src/index.ts`
+- **Tests** live in `test/pool.test.ts` and use Vitest
 - **Docs** live under `docs/` and are rendered via VitePress
 - **Tooling** scripts live in `scripts/` (including git hooks)
 
 ## Prerequisites
 
 - Node.js 20+ and pnpm 10.20+
-- Run `pnpm install` from the repo root (monorepo) so shared tooling is linked
+- Clone this repository and run `pnpm install` from its root directory
 
 ## Workflow
 
@@ -42,13 +42,12 @@ pnpm test
 
 ## Release process
 
-Releases are handled via the `pnpm release` script, which runs tests, builds, generates docs, and updates the changelog. The [mono-repo](https://github.com/AvensioDev/avensio) contains CI workflows that publish documentation and packages once changes land on `main`.
+Releases are handled by maintainers in this repository. The release script runs the tests, builds the package, updates the changelog, and creates the release commit and tag. Publishing to npm is handled by [the repository's publish workflow](.github/workflows/publish.yml) after a GitHub release is published.
 
-If you need to cut a release manually:
+To cut a release as a maintainer:
 
 ```bash
 pnpm release
-# follow the prompts and push the resulting tag
 ```
 
 ## Reporting bugs & requesting features
