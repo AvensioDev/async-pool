@@ -11,6 +11,7 @@ description: Chronological record of notable changes, improvements, fixes, and r
 
 - **docs:** Define logical next-page links for package overviews ([42ea2ff](https://github.com/AvensioDev/async-pool/commit/42ea2ff))
 - Prepare package for standalone publishing ([b27dd91](https://github.com/AvensioDev/async-pool/commit/b27dd91))
+- Remove unavailable discussions link ([2addc9a](https://github.com/AvensioDev/async-pool/commit/2addc9a))
 
 ### 🧹 Refactors
 
