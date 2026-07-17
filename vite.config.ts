@@ -20,9 +20,13 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src', 'index.ts'),
       name: 'pool',
-      formats: ['es', 'cjs', 'iife'],
-      fileName: (format) => `pool.${format}.js`,
+      formats: ['es', 'cjs'],
+      fileName: (format) => format === 'cjs' ? 'pool.cjs' : 'pool.es.js',
     },
-    minify: false
+    rollupOptions: {
+      external: ['@avensio/shared'],
+    },
+    minify: false,
+    emptyOutDir: true,
   }
 })

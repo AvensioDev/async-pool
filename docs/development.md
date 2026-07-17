@@ -20,7 +20,7 @@ pnpm install
 | --- | --- |
 | `pnpm test` | Runs Vitest over `test/pool.test.ts` with coverage output in `coverage/`. |
 | `pnpm lint` | ESLint with auto-fix enabled via `eslint.config.mjs`. |
-| `pnpm build` | Builds the ESM and IIFE bundles (`dist/`) and refreshes type declarations (`dist/pool.es.d.ts`). |
+| `pnpm build` | Builds the ESM, CJS, and IIFE bundles (`dist/`) and refreshes type declarations (`dist/pool.es.d.ts`). |
 | `pnpm docs:dev` | Launches VitePress for the docs folder. |
 | `pnpm docs:build` / `pnpm docs:preview` | Generate and review the static docs site. |
 | `pnpm release` | Runs tests, builds artifacts, and updates the changelog using `changelogen`. |

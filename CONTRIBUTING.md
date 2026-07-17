@@ -13,6 +13,7 @@ Thanks for helping improve `async-pool`! This document explains how to get start
 
 - Node.js 20+ and pnpm 10.20+
 - Clone this repository and run `pnpm install` from its root directory
+- Optionally run `pnpm hooks:install` to enable commit-message validation locally
 
 ## Workflow
 
@@ -42,7 +43,7 @@ pnpm test
 
 ## Release process
 
-Releases are handled by maintainers in this repository. The release script runs the tests, builds the package, updates the changelog, and creates the release commit and tag. Publishing to npm is handled by [the repository's publish workflow](.github/workflows/publish.yml) after a GitHub release is published.
+Releases are handled by maintainers in this repository. The release script runs the tests, builds the package, updates the changelog, and creates the release commit and tag. After the initial manual npm publication, later releases are published through [the repository's trusted-publishing workflow](.github/workflows/publish.yml).
 
 To cut a release as a maintainer:
 

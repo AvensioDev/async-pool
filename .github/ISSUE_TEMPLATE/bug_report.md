@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a reproducible problem with @avensio/shared
+about: Report a reproducible problem with @avensio/async-pool
 labels: bug
 ---
 
@@ -20,7 +20,7 @@ Steps to reproduce the behavior:
 <!-- Tell us what actually happened. Include logs or screenshots if helpful. -->
 
 ## Environment
-- @avensio/shared version:
+- @avensio/async-pool version:
 - Runtime (Node.js, Deno, Bun, Browser):
 - OS:
 

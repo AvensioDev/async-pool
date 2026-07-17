@@ -51,6 +51,12 @@ describe('createPool', () => {
     expect(third).toEqual({ status: 'fulfilled', value: 99 })
   })
 
+  it('rejects task values that are not functions', async () => {
+    const pool = createPool(1)
+
+    await expect(pool(null as never)).rejects.toThrow(TypeError)
+  })
+
   it('propagates synchronous errors from the task factory', async () => {
     const pool = createPool(1)
     await expect(

@@ -1,9 +1,9 @@
 {
   "name": "@avensio/async-pool",
   "version": "1.0.2",
-  "description": "Run functions in an non-blocking manner, without blocking the Event-Loop",
+  "description": "A lightweight, type-safe FIFO promise pool for limiting concurrent asynchronous tasks in Node.js and browsers. Includes strict limit validation, rejection-safe scheduling, and typed ESM, CJS, and IIFE bundles.",
   "type": "module",
-  "main": "./dist/pool.es.js",
+  "main": "./dist/pool.cjs",
   "module": "./dist/pool.es.js",
   "browser": "./dist/pool.iife.js",
   "types": "./dist/pool.es.d.ts",
@@ -18,13 +18,12 @@
     "avensio"
   ],
   "scripts": {
-    "postinstall": "node ./scripts/hooks/commit-msg.mjs",
-    "prepack": "pnpm run release",
+    "hooks:install": "node ./scripts/hooks/commit-msg.mjs",
     "release": "pnpm run test && pnpm run build && pnpm run changelog",
     "changelog": "changelogen --release --push --yes",
     "dev": "vitest --logHeapUsage --coverage",
-    "build": "vite build",
-    "postbuild": "node ./scripts/update.ts",
+    "build": "vite build && vite build -c vite.iife.config.ts",
+    "postbuild": "node ./scripts/update.ts && node ./scripts/test-package.mjs",
     "lint": "eslint --fix src/",
     "test": "vitest run --coverage test/",
     "docs:dev": "vitepress dev docs/ --open",
@@ -47,6 +46,14 @@
     "url": "https://github.com/AvensioDev/async-pool/issues"
   },
   "homepage": "https://docs.avensio.de/packages/async-pool/docs/",
+  "exports": {
+    ".": {
+      "types": "./dist/pool.es.d.ts",
+      "import": "./dist/pool.es.js",
+      "require": "./dist/pool.cjs",
+      "default": "./dist/pool.es.js"
+    }
+  },
   "files": [
     "dist",
     "package.json",
@@ -54,7 +61,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@avensio/shared": "workspace:* || ^1.0.0"
+    "@avensio/shared": "^2.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",

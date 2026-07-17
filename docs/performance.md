@@ -12,15 +12,15 @@ Correct pool sizing depends on task duration, upstream quotas, and host capacity
 3. Run with increasing limits (2, 4, 8, 16…) until throughput stops improving or upstream services throttle you.
 4. Record both total duration and max in-flight requests to understand pressure on downstream systems.
 
-When `t < 1 ms` or payloads are tiny (<50 KB), Promise overhead dominates—stick to synchronous loops. Once `t > 10 ms` or payloads exceed ~200 KB, the pool almost always helps hide latency.
+There is no universal duration, payload size, or concurrency limit at which pooling becomes beneficial. Compare representative workloads and include downstream throttling, memory use, and error rates in the result.
 
 ## Choosing a limit
 | Scenario | Suggested limit | Rationale |
 | --- | --- | --- |
 | Single external API with rate limit | `Math.floor(rate / per-request cost)` | Match provider quotas. |
 | Mixed resources (DB + HTTP) | Separate pools (e.g., 2 for DB, 6 for HTTP) | Avoid one resource starving another. |
-| I/O heavy CLI tools | 2 × number of CPU cores | Leaves headroom for event loop + logging. |
-| Browser environments | 4–6 | Browsers already limit concurrent connections; higher values add little. |
+| I/O-heavy CLI tools | Increase from a low baseline while measuring | The useful limit depends on the downstream resource rather than CPU count alone. |
+| Browser environments | Tune per origin and workload | Connection limits, protocols, devices, and upstream quotas vary. |
 
 ## Backpressure & queue depth
 Monitor queue length to decide when to stop accepting work:

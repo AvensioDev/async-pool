@@ -7,7 +7,7 @@
 | Latest release (`main`) | ✅ |
 | Older releases | ❌ |
 
-We focus fixes on the latest published version of `@avensio/event-emitter`. If you depend on an older release, please upgrade before reporting issues when possible.
+We focus fixes on the latest published version of `@avensio/async-pool`. If you depend on an older release, please upgrade before reporting issues when possible.
 
 ## Reporting a vulnerability
 

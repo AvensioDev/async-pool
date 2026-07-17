@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an enhancement for @avensio/shared
+about: Suggest an enhancement for @avensio/async-pool
 labels: enhancement
 ---
 

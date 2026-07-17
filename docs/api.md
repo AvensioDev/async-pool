@@ -8,7 +8,7 @@ description: Reference for createPool, concurrency limits, task scheduling, retu
 
 ## `createPool(limit: number): PoolRunner`
 - **`limit`** – required positive integer. Represents the maximum number of tasks that may run concurrently. Passing `0`, negative, or non-integer values throws `RangeError` before any task is scheduled (see validation in `src/index.ts`).
-- **Returns** a `PoolRunner`, i.e. a function `pool<T>(task: () => Promise<T>): Promise<T>`.
+- **Returns** a `PoolRunner`, i.e. a function `pool<T>(task: () => T | PromiseLike<T>): Promise<T>`.
 
 ### Runner contract
 | Aspect | Details |
@@ -55,7 +55,7 @@ export const createInstrumentedPool = (limit: number, onStats: (stats: { inFligh
 ```
 
 ## TypeScript typings
-- `PoolRunner` is exported for reuse (`export type PoolRunner = <T>(task: () => Promise<T>) => Promise<T>`).
+- `Task` and `PoolRunner` are exported for reuse. Tasks may return either a value or a promise-like value; the runner always returns a native `Promise`.
 - The library ships `.d.ts` declarations (`package.json:8-9`) so both ESM and CJS consumers get accurate types.
 
 ## Error matrix

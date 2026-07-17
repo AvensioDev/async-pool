@@ -70,7 +70,7 @@ The pool doesn’t cancel queued work, but you can wrap tasks with `AbortControl
 ```ts
 const pool = createPool(5)
 
-const runWithTimeout = (task: () => Promise<unknown>, ms: number) => {
+const runWithTimeout = (task: (signal: AbortSignal) => Promise<unknown>, ms: number) => {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), ms)
   return pool(async () => {

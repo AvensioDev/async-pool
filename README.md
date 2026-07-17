@@ -14,7 +14,7 @@ Lightweight concurrency control for async work in Node.js and browsers. `createP
 - Deterministic FIFO scheduling backed by `LinkedQueue` from `@avensio/shared`
 - Strict parameter validation with helpful errors for bad limits or task factories
 - Graceful handling of rejections: failed tasks free their slot and the queue keeps draining
-- Works in modern Node.js runtimes and ship-ready as an IIFE bundle for browsers/Workers
+- Works in modern Node.js runtimes and ships as an IIFE bundle for browsers and Workers
 - Zero dependencies beyond `@avensio/shared`, which pulls in no transitive packages
 
 ## Installation
@@ -75,7 +75,7 @@ const poolFactory = () => createPool(limit)
 More recipes (timeouts, cancellation, queue draining) live in the [usage guide](docs/usage.md).
 
 ## Performance & limitations
-- Ideal for I/O-heavy operations (>10 ms latency, >200 KB payloads).
+- Ideal for I/O-heavy operations whose concurrency must be capped.
 - For CPU-bound loops prefer `worker_threads`, `cluster`, or job queues.
 - Monitor queue depth to implement backpressure (patterns in [performance.md](docs/performance.md)).
 - The scheduler is FIFO; if you need priority queues, wrap `LinkedQueue` with your own structure.
@@ -85,7 +85,7 @@ More recipes (timeouts, cancellation, queue draining) live in the [usage guide](
 | --- | --- |
 | `pnpm test` | Run Vitest (`test/pool.test.ts`) with coverage (`coverage/`). |
 | `pnpm lint` | ESLint with auto-fix. |
-| `pnpm build` | Bundle ESM + IIFE outputs via Vite and regenerate types. |
+| `pnpm build` | Bundle ESM, CJS, and IIFE outputs via Vite and regenerate types. |
 | `pnpm docs:dev` / `docs:build` | Work on the VitePress docs. |
 | `pnpm release` | Test + build + changelog via `changelogen`. |
 

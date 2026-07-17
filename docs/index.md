@@ -18,7 +18,7 @@ pnpm add @avensio/async-pool
 ## Overview
 - **API surface**: a single exported factory, [`createPool`](./api.md), which validates the concurrency limit and returns a FIFO scheduler.
 - **Use cases**: throttling HTTP requests, batching filesystem writes, providing per-resource caps for heterogeneous workloads, and coordinating background tasks (see [Usage patterns](./usage.md)).
-- **Performance guidance**: asynchronous pooling shines once tasks last longer than ~10 ms or move sizable payloads; otherwise the promise machinery eclipses gains. Benchmarks and tuning tips live in [Performance](./performance.md).
+- **Performance guidance**: choose limits from measurements of representative workloads and downstream constraints. Benchmarking and tuning advice lives in [Performance](./performance.md).
 - **Limitations**: no CPU parallelism, no built-in cancellation, FIFO only—documented in [Limitations](./limitations.md).
 
 ## How it works
